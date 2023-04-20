@@ -1,0 +1,38 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: joshix-poi-gateway-app-dev
+  annotations:
+    argocd/app-name: joshix-poi-gateway-app-dev
+    backstage.io/kubernetes-id: joshix-poi-gateway-app-dev
+    backstage.io/kubernetes-namespace: joshix
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=joshix-poi-gateway-app-dev'
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: Summit23DevRHEL/joshix-gateway
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://devspaces.apps.summit23-dr.w6gk.p1.openshiftapps.com/#https://github.com/Summit23DevRHEL/joshix-gateway?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:joshix"
+  system: workshop-system-joshix
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: workshop-system-joshix
+  tags:
+    - backstage
+    - janus-idp
+    - openshift
+    - workshop
+    - rh-summit
+spec:
+  owner: "user:joshix"
